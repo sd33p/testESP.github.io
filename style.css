@@ -1,7 +1,55 @@
+/* --- Sidebar --- */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #f8f9fa;
+  border-right: 2px solid #2c3e50;
+  padding: 1rem 0.75rem;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#sidebar a {
+  display: block;
+  padding: 0.3rem 0.4rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+#sidebar a:hover {
+  background: #e2e6ea;
+  color: #2980b9;
+}
+
+#sidebar a.sidebar-h2 {
+  padding-left: 1.2rem;
+}
+
+#sidebar a.sidebar-h3 {
+  padding-left: 2.2rem;
+  font-size: 0.8rem;
+}
+
+/* --- Main content --- */
 body {
   font-family: Arial, sans-serif;
   max-width: 900px;
-  margin: 0 auto;
+  margin-left: 260px;
   padding: 2rem;
 }
 
@@ -21,6 +69,7 @@ figure img {
   max-width: 100%;
 }
 
+/* --- Collapsible headings --- */
 details {
   margin-bottom: 1rem;
   border-left: 3px solid #2c3e50;
