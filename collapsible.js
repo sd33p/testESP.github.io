@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Move all sibling elements until the next heading into <details>
     let sibling = heading.nextElementSibling;
-    while (sibling && !sibling.matches("h2, h3")) {
+    while (sibling && !sibling.matches("h1, h2, h3, h4, h5, h6, h7")) {
       const next = sibling.nextElementSibling;
       details.appendChild(sibling);
       sibling = next;
