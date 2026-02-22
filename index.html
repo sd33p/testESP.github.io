@@ -1,0 +1,823 @@
+<p>Drinking Water State-Federal-Tribal Information Exchange System
+(DW-SFTIES) </p>
+<p> </p>
+<p><strong>DW-SFTIES ESP User Guide</strong>  </p>
+<p><strong>Version 1</strong> – <strong>Release 0.21.00</strong> </p>
+<p>Last Updated 2/18/2026</p>
+<p> </p>
+<p>U.S. Environmental Protection Agency </p>
+<p><strong>Office of Water / Office of Ground Water and Drinking
+Water</strong> </p>
+<p> </p>
+<p><img src="./media/media/image1.jpeg"
+style="width:1.16319in;height:1.16319in" alt="P14#yIS1" /> </p>
+<p> </p>
+<p>Drinking Water State-Federal Tribal Information Exchange System
+(DW-SFTIES) ESP</p>
+<h1 class="TOC-Heading" id="contents">Contents</h1>
+<p><a href="#overview">1 Overview <span>3</span></a></p>
+<p><a href="#dw-sfties-primacy-agency-admin-access">2 DW-SFTIES Primacy
+Agency Admin Access <span>3</span></a></p>
+<p><a href="#esp-users">3 ESP Users <span>5</span></a></p>
+<p><a href="#searching-for-esp-user">3.1 Searching for ESP User
+<span>5</span></a></p>
+<p><a href="#creating-esp-user">3.2 Creating ESP user
+<span>5</span></a></p>
+<p><a href="#basic-individual-information">3.2.1 Basic Individual
+Information <span>7</span></a></p>
+<p><a href="#esp-user-role-assignments">3.2.2 ESP User Role Assignments
+<span>8</span></a></p>
+<p><a href="#editing-esp-user">3.3 Editing ESP user
+<span>9</span></a></p>
+<p><a href="#deleting-esp-user">3.4 Deleting ESP user
+<span>10</span></a></p>
+<p><a href="#esp-my-profile-page">4 ESP My Profile Page
+<span>10</span></a></p>
+<p><a href="#drinking-water-sample-jobs">5 Drinking Water Sample Jobs
+<span>11</span></a></p>
+<p><a href="#overview-1">5.1 Overview <span>11</span></a></p>
+<p><a href="#creating-a-sample-job">5.2 Creating a Sample Job
+<span>11</span></a></p>
+<p><a href="#esp-jobs-specific-functionality"><mark>5.3</mark> <mark>ESP
+Jobs Specific Functionality</mark> <span>16</span></a></p>
+<p><a href="#sending-draft-job-to-certifier"><mark>5.3.1</mark>
+<mark>Sending Draft Job To Certifier</mark> <span>16</span></a></p>
+<p><a href="#esp-return-to-preparer"><mark>5.3.2</mark> <mark>ESP Return
+to Preparer</mark> <span>17</span></a></p>
+<p><a href="#esp-job-history"><mark>5.3.3</mark> <mark>ESP Job
+History</mark> <span>18</span></a></p>
+<p><a href="#editing-a-sample-job">5.4 Editing a Sample Job
+<span>19</span></a></p>
+<p><a href="#deleting-a-sample-job">5.5 Deleting a Sample Job
+<span>20</span></a></p>
+<p><a href="#excel-template">6 Excel Template <span>21</span></a></p>
+<p><a href="#refresh-reference-values-in-the-excel-template">6.1 Refresh
+Reference Values in the Excel Template <span>21</span></a></p>
+<p><a href="#generate-json-file-from-esp-excel-template">6.2 Generate
+JSON file from ESP Excel Template <span>22</span></a></p>
+<p><a href="#esp-advanced-sample-search-page"><mark>7</mark> <mark>ESP
+Advanced Sample Search Page</mark> <span>23</span></a></p>
+<p>Revision History</p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 18%" />
+<col style="width: 39%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Version</strong></th>
+<th><strong>Date of Revision</strong></th>
+<th><strong>Description of Change</strong></th>
+<th><strong>Author</strong></th>
+<th><strong>Reviewed By Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.0</td>
+<td>02/21/2026</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="overview">Overview</h1>
+<h1 id="dw-sfties-primacy-agency-admin-access">DW-SFTIES Primacy Agency
+Admin Access </h1>
+<p>Primacy agency roles are managed at the DW-SFTIES level and include
+permissions such as <strong>ESP Primacy Admin</strong>
+(ROLE_ESP_PRIMACY_ADMIN_WRITE) and <strong>ESP Compliance
+Officer</strong> (ROLE-ESP_PRIMACY_CO_WRITE). However, these roles
+currently function in a read-only capacity within ESP, as primacy
+agencies cannot view data until it has been submitted by a Lab or
+PWS.</p>
+<p>To utilize ESP, Primacy Agency users need access to the Lab/PWS
+roles, such as <strong>ESP Lab/PWS Admin</strong>
+(ROLE_ESP_ADMIN_WRITE), <strong>ESP Preparer</strong>
+(ROLE_ESP_PREPARER_WRITE) or <strong>ESP Certifier</strong>
+(ROLE_ESP_CERTIFIER_WRITE). This requires coordination between two
+primacy agency users. NOTE: The preceding sentence is only valid during
+the testing phase and will be updated in the future as ESP is fully
+built out</p>
+<p><strong>Coordination between two primacy agency users</strong></p>
+<ol type="1">
+<li><p>Navigate to DW-SFTIES &gt; System Admin &gt; User
+Management.</p></li>
+<li><p>Select <u>you</u>r User ID to edit, and on the Manage User page,
+select <strong>Assign Role</strong>.</p></li>
+<li><p>Assign the <strong>ESP Primacy Agency Admin</strong> role with a
+Start Date in the past and no End Date.</p></li>
+</ol>
+<blockquote>
+<p><em>Figure 1: User Role Assignments grid with the new ESP Primacy
+Agency Admin role outlined in red</em></p>
+</blockquote>
+<p><img src="./media/media/image2.png"
+style="width:6.00961in;height:2.13418in"
+alt="User Role Assignments grid with the new ESP Primacy Agency Admin role outlined in red" /></p>
+<ol start="4" type="1">
+<li><p><strong>Save</strong>. You now have access to the ESP
+module.</p></li>
+<li><p>Add a co-tester into ESP who already has DW-SFTIES access:</p>
+<ol type="a">
+<li><p>Navigate to ESP &gt; ESP Users.</p></li>
+<li><p>From the User Type dropdown, select <strong>All Non-ESP
+Users</strong>.</p></li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em>Figure 2: User Type dropdown</em></p>
+</blockquote>
+<p><img src="./media/media/image3.png"
+style="width:3.20833in;height:1.51462in" alt="User Type dropdown" /></p>
+<ol start="3" type="a">
+<li><p>Find the co-tester by their CDX username.</p></li>
+<li><p>On the co-tester’s Manage ESP User page, select <strong>Create
+ESP User</strong> <strong>Role Assignment.</strong></p>
+<ol type="i">
+<li><p>For the Role: Select ROLE_ESP_ADMIN_WRITE.</p></li>
+<li><p>For the Organization: Select the Link icon (<img
+src="./media/media/image4.png" style="width:0.2in;height:0.2in"
+alt="Link icon" />) by Organizations to pull up the Organization Search
+modal. <strong>Select a PWS only.</strong></p></li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em>Figure 3: Radio buttons to switch the Organization list display
+options</em></p>
+</blockquote>
+<p><img src="./media/media/image5.png"
+style="width:3.22052in;height:2.0558in"
+alt="Radio buttons to switch the Organization list display options" /></p>
+<ol start="5" type="a">
+<li><p>Save by selecting <strong>Create New ESP User</strong>.  Your
+co-tester now has ESP access as a PWS Admin.</p></li>
+<li><p>The co-tester can now assign you a PWS role for the same
+organization that they are assigned to.</p>
+<ol type="i">
+<li><p>Have the co-tester log into ESP &gt; ESP Users.</p></li>
+<li><p>On the User Type dropdown, have the co-tester select <strong>All
+ESP Users</strong> and find you.</p></li>
+<li><p>On your Manage ESP User page, have the co-tester select
+<strong>Create ESP User</strong> <strong>Role Assignment</strong>.</p>
+<ol type="1">
+<li><p>Role: ROLE_ESP_ADMIN_WRITE, ROLE_ESP_PREPARER_WRITE, or
+ROLE_ESP_CERTIFIER_WRITE</p></li>
+<li><p>Organization: Only the organization that you assigned to the
+co-tester will be available. Use the radio buttons to find it.</p></li>
+</ol></li>
+</ol></li>
+<li><p><strong>Save</strong>. You now have the option to test with PWS
+access.</p></li>
+</ol>
+<h1 id="esp-users">ESP Users</h1>
+<h2 id="searching-for-esp-user">Searching for ESP User</h2>
+<p>Users with role groups that grant them <em>Read</em> or
+<em>Write</em> permissions to ESP User can view ESP user in the
+<strong>Electronic Samples Portal Users</strong> search grid, via the
+<strong>ESP &gt; ESP Users</strong> module.</p>
+<p>Users may sort and filter different columns like User Profile ID,
+First Name, Last Name, Active, etc.</p>
+<p><strong>Note</strong>: The User Type dropdown includes three options:
+My Organization, All ESP Users and All Non-ESP Users.</p>
+<blockquote>
+<p><strong>My Organization</strong> (default): Displays only users
+within the current organization.</p>
+<p><strong>All ESP Users</strong>: Displays all users in ESP, including
+those from other labs or organizations. This is used when adding
+existing ESP users to the current organization.</p>
+<p><strong>All Non-ESP Users</strong>: Displays users with DW-SFTIES
+access only (no ESP access). This is used when adding Primacy Agency
+users to the current organization.</p>
+</blockquote>
+<p><img src="./media/media/image6.png"
+style="width:6.5in;height:1.58333in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p>
+<h2 id="creating-esp-user">Creating ESP user</h2>
+<p>Users with role groups that grant them <em>Read</em> and
+<em>Write</em> permissions to ESP User can create ESP user in the
+<strong>Electronic Samples Portal Users</strong> search grid, via the
+<strong>ESP &gt; ESP Users</strong> module and selecting <strong>Create
+ESP User</strong> button.</p>
+<p><img src="./media/media/image6.png"
+style="width:6.5in;height:1.58333in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p>
+<p>When creating a new ESP user, required fields on the <strong>Create
+New ESP User</strong> wizard page must be entered for the ESP user to be
+saved.</p>
+<ul>
+<li><p>User ID: The User Profile ID</p>
+<ul>
+<li><p>Must be unique</p></li>
+<li><p>Must match CDX username</p></li>
+</ul></li>
+<li><p>Active Indicator: Defaults to active</p></li>
+<li><p>Basic Individual Information</p></li>
+<li><p>ESP User Role Assignment</p></li>
+</ul>
+<p>After saving the ESP user, the following data quality checks
+occur:</p>
+<ul>
+<li><p>Required User ID, Active Indicator, Basic Individual Roles and
+ESP User Role has been provided.</p></li>
+<li><p>User ID is unique.</p></li>
+</ul>
+<p>If the save is successful, the system will return the user to the
+<strong>Manage ESP User</strong> page.</p>
+<p><strong>Note:</strong> The following validations occurs when adding a
+new user through the ESP sub-module</p>
+<ol type="1">
+<li><p>When adding a PWS/Lab/Read Only Role, the user should only be
+able to assign 1 active role per PWS or Lab organization.</p>
+<ul>
+<li><p>Users can only have one active Role per PWS/Lab organization. A
+user can not have multiple ACTIVE (no end date, or an end date that has
+not passed) roles associated to an organization</p></li>
+<li><p>Example: A user cannot be an active ESP Certifier and an active
+ESP Read Only user at Accutest Labs.</p></li>
+<li><p>Roles Impacted: PWS/LAB/Read Only Roles - ESP_ADMIN,
+ESP_PREPARER, ESP_CETIFIER, ESP_READ ONLY</p></li>
+</ul></li>
+<li><p>When adding a Primacy Agency Role, the user should only be able
+to assign either a ESP_PRIMACY_ADMIN or ESP_COMPLIANCE OFFICER.</p>
+<ul>
+<li><p>Primacy Agency Roles - ESP_PRIMACY_ADMIN,
+ESP_COMPLIANCE_OFFICER</p></li>
+<li><p>Example: A user cannot be an active ESP PRIMACY ADMIN and an
+active ESP COMPLIANCE OFFICER user in the UT schema.</p></li>
+<li><p>If a user has a Primacy_Admin or Primacy_compliance _officer Role
+they cannot be assigned a Lab or PWS Preparer or Certifier
+Role.</p></li>
+<li><p>If a user has a Primacy_Admin or Primacy_compliance_officer Role,
+they cannot be assign a Read Only Role for PWS or LAB to themselves.
+Only an ESP_ADMIN for a lab or water system may add a Read_Only role for
+their organization(pws/lab).</p></li>
+<li><p>If the user has both a Primacy Agency role and a Read Only role
+the Primacy Agency role should become the primary "current
+organization". Even if its created Second.</p></li>
+<li><p>No Organization Assignment can be assigned to a ESP_PRIMACY_ADMIN
+or ESP_COMPLIANCE OFFICER.</p></li>
+</ul></li>
+</ol>
+<h3 id="basic-individual-information">Basic Individual Information</h3>
+<p>Basic Individual Information includes data pertaining to a ESP user
+like first name, last name, active status, etc. The uniqueness criteria
+are the Individual ID and Name.</p>
+<p>There are two ways to add basic individual information.</p>
+<ol type="1">
+<li><p>Through Link Individual button (if the legal entity already
+exists)</p></li>
+</ol>
+<blockquote>
+<p>Please follow the steps below:</p>
+</blockquote>
+<ol type="a">
+<li><p>Click on Link Individual button <img
+src="./media/media/image7.png" style="width:6.29472in;height:1.4797in"
+alt="Chart AI-generated content may be incorrect." /></p></li>
+<li><p>Select the existing legal entity legal entity from the Link
+Existing Individual popup <img src="./media/media/image8.png"
+style="width:6.5in;height:3.22639in"
+alt="Table AI-generated content may be incorrect." /></p></li>
+</ol>
+<ol start="2" type="1">
+<li><p>By entering the information manually</p></li>
+</ol>
+<p><img src="./media/media/image9.png"
+style="width:6.5in;height:2.01181in"
+alt="A screenshot of a computer AI-generated content may be incorrect." /></p>
+<p>Field Information:</p>
+<ul>
+<li><p>The following fields are required to save data on page:</p>
+<ul>
+<li><p><strong>First Name:</strong> User’s first name.</p>
+<ul>
+<li><p>This field is required for federal reporting.</p></li>
+</ul></li>
+<li><p><strong>Last Name:</strong> User’s last name.</p>
+<ul>
+<li><p>This field is required for federal
+reporting<strong>.</strong></p></li>
+</ul></li>
+<li><p><strong>Individual ID:</strong> The user’s individual ID</p>
+<ul>
+<li><p>This field is required for federal reporting.</p></li>
+</ul></li>
+<li><p><strong>Individual Status</strong>: The legal entity’s activity
+status, such as Active or Inactive.</p></li>
+<li><p><strong>Status Date</strong>: Date of status.</p></li>
+</ul></li>
+<li><p>The following fields are optional to save data on page:</p>
+<ul>
+<li><p><strong>Status Reason</strong></p></li>
+<li><p><strong>Title</strong></p></li>
+<li><p><strong>Middle Initial</strong></p></li>
+<li><p><strong>Suffix</strong></p></li>
+<li><p><strong>Professional Title</strong></p></li>
+<li><p><strong>Alias Name</strong></p></li>
+</ul></li>
+</ul>
+<h3 id="esp-user-role-assignments">ESP User Role Assignments</h3>
+<p>To add a role for the ESP user, click on the Create ESP User Role
+Assignment button</p>
+<p><img src="./media/media/image10.png"
+style="width:6.5in;height:1.31319in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p>
+<p>Field Information:</p>
+<ul>
+<li><p>The following fields are required to save data on page:</p>
+<ul>
+<li><p><strong>Current Role Org:</strong> An Indicator, such as a star
+icon, that functions similarly to the Current Regulating Agency
+Indicator in DW-SFTIES that informs users which Role/Organization
+association they are currently working under. For example, A user can
+switch their indicator to switch from working as a Certifier user for
+Accutest Labs, to being a Read-Only user for Smithfield City.</p>
+<ul>
+<li><p>If users only have one role/organization, then the current
+indicator will default to that one.</p></li>
+<li><p>A user’s current role/organization assignment will save between
+sessions.</p></li>
+<li><p>Users can only have a current org that is within the start and
+end date (if there is an end date).</p></li>
+</ul></li>
+<li><p><strong>Role Group:</strong> ESP role groups, such as ESP Lab/PWS
+admin</p>
+<ul>
+<li><p>Can not edit an existing role group<strong>.</strong></p></li>
+<li><p>Existing Role Groups are</p>
+<ul>
+<li><p>ESP Lab/PWS Admin</p></li>
+<li><p>ESP Lab/PWS Preparer</p></li>
+<li><p>ESP Lab/PWS Certifier</p></li>
+<li><p>ESP Read Only</p></li>
+<li><p>ESP Primacy Agency Admin</p></li>
+<li><p>ESP Primacy Agency Compliance Officer</p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Start Date</strong>: The begin date that the role and
+organization association begins.</p>
+<ul>
+<li><p>Dates are allowed up to 30 days in the future.</p></li>
+</ul></li>
+<li><p><strong>Organization:</strong> The organization that the user is
+submitting data for.</p>
+<ul>
+<li><p>ESP Primacy Agency Admins will be able to select from all
+Agencies/Organizations.</p></li>
+<li><p>ESP Lab/PWS Admin’s will only be able to select organizations
+that they are assigned to.</p></li>
+<li><p>Users can not have multiple ACTIVE roles under an organization.
+For example, a user can not be an active ESP Certifier and an active ESP
+Read Only user at Accutest Labs.</p></li>
+<li><p>Can not edit an existing organization.</p></li>
+</ul></li>
+</ul></li>
+<li><p>The following fields are optional to save data on page:</p>
+<ul>
+<li><p><strong>End Date</strong>: The last date that the role and
+organization association ends.</p></li>
+</ul></li>
+</ul>
+<h2 id="editing-esp-user">Editing ESP user</h2>
+<p>Users with role groups that grant them <em>Write</em> permissions to
+ESP Users can edit a ESP User by navigating to the Electronic Samples
+Portal Users search grid, via the <strong>ESP &gt; ESP Users</strong>
+module, and selecting the <strong>gray pencil</strong> icon next to a
+ESP user.</p>
+<p><img src="./media/media/image12.png"
+style="width:6.5in;height:1.68958in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p>
+<p>This will open a user’s <strong>Manage ESP User</strong> page, which
+displays all of the ESP user’s information.</p>
+<p><img src="./media/media/image13.png"
+style="width:6.5in;height:2.91597in"
+alt="Graphical user interface, text AI-generated content may be incorrect." /></p>
+<p>Notes on editing:</p>
+<ul>
+<li><p>You can only add or delete the User Role Assignment for the
+user.</p></li>
+</ul>
+<p>The Save button will remain gray until edits are made. Once edits are
+complete, click the <strong>Save</strong> button to save the changes.
+Once, edits are saved the user will remain on the <strong>Manage ESP
+User</strong> page.</p>
+<p>To return to <strong>Electronic Sample Portal Users</strong> module,
+select the <strong>GO BACK</strong> button. If the user has made edits
+without saving and attempts to go back, a warning message will appear
+asking if the user wants to leave without saving.</p>
+<h2 id="deleting-esp-user">Deleting ESP user</h2>
+<h1 id="esp-my-profile-page">ESP My Profile Page</h1>
+<p>The ESP Module contains a My Profile page that can be accessed from
+the navigation menu via ESP &gt; My Profile. This page allows users to
+change their current working organization. Users must have ESP
+permissions to access this page.</p>
+<p>If users have multiple role assignments then users can set the
+desired role as their current role assignment by selecting the Star
+icon.</p>
+<p><em>Figure1: Star icon indicating that the ROLE_ESP_ADMIN_WRITE role
+group is set as Current</em></p>
+<p><img src="./media/media/image14.png"
+style="width:5.43405in;height:2.85752in"
+alt="Star icon indicating that the ROLE_ESP_ADMIN_WRITE role group is set as Current" /></p>
+<p>The following data validations will occur:</p>
+<ol type="1">
+<li><p>Users will be prevented from selecting a role organization as
+current that has an End Date in the past.</p></li>
+</ol>
+<h1 id="drinking-water-sample-jobs">Drinking Water Sample Jobs</h1>
+<h2 id="overview-1">Overview</h2>
+<p>This system module contains information about Jobs, sample types
+within a Job, record details, and access to Validation and Errors
+reports. A Sample Job comprises one or more samples containing one or
+more sample results for one or more analytes.</p>
+<h2 id="creating-a-sample-job">Creating a Sample Job</h2>
+<p>Users with role groups that grant them <em>Write</em> permissions to
+the <strong>Drinking Water Sample Jobs</strong> can add a Sample Job
+from the <strong>ESP &gt; Drinking Water Sample Jobs</strong> and
+selecting the <strong>Create Job</strong> button.</p>
+<p><strong>Notes</strong>:</p>
+<p>Users must be assigned to a Primary Water Source Organization or Lab
+Organization and have one of the following roles:</p>
+<ul>
+<li><p>ROLE_ESP_PREPARER</p></li>
+<li><p>ROLE_ESP_CERTIFIER</p></li>
+<li><p>ROLE_ESP_ADMIN</p></li>
+</ul>
+<p>Please follow the steps below to add a sample job</p>
+<ol type="1">
+<li><p>Navigate to ESP &gt; Drinking Water Sample Jobs &gt; Create Job.
+<img src="./media/media/image15.png"
+style="width:5.55146in;height:1.56283in"
+alt="Graphical user interface, text, application, chat or text message AI-generated content may be incorrect." /></p></li>
+<li><p>Enter Job Name: “&lt;Name&gt;”, click <strong>Next,</strong> and
+verify that a Job Creation success message displays.</p></li>
+</ol>
+<p><em>Figure 1: Job Creation success message</em></p>
+<p><img src="./media/media/image16.png"
+style="width:3.42317in;height:1.2047in"
+alt="Job Creation success message" /></p>
+<ol start="3" type="1">
+<li><p>Choose a way to add samples to the job by selecting either the
+Upload File or Enter Sample option<br />
+<img src="./media/media/image17.png"
+style="width:6.5in;height:1.71458in"
+alt="Text AI-generated content may be incorrect." /></p>
+<ol type="i">
+<li><p>Enter Sample: If user selects “Enter Sample” then they need to
+select if it is a Microbial or General Chemical sample<br />
+<img src="./media/media/image18.png"
+style="width:4.53277in;height:1.44039in"
+alt="Graphical user interface, text, application, chat or text message AI-generated content may be incorrect." /></p></li>
+</ol></li>
+</ol>
+<blockquote>
+<p>Fields</p>
+<p>The fields in the <strong>Add Sample</strong> Wizard are similar to
+the <a href="#_Creating_a_Sample"><u>Manage Sample page in the Sampling
+&gt; Sampling List page</u></a>.</p>
+</blockquote>
+<ol start="2" type="i">
+<li><p>If the user selects “Upload File” then the user can upload their
+desired file in the Upload Files step of the Wizard: <img
+src="./media/media/image19.png"
+style="width:6.5in;height:3.10694in" /></p></li>
+</ol>
+<ol type="a">
+<li><p>Select <strong>Choose File</strong> and upload a valid JSON
+file.</p></li>
+<li><p>Select <strong>Upload</strong> and confirm the file populates the
+grid.</p></li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: If there are structural errors in the file
+(For Example: Value exceeds max length, wrong data type etc) then users
+won’t be able to proceed to the next step. In this scenarios, users will
+have to delete the file and start over<br />
+<br />
+<img src="./media/media/image20.png"
+style="width:5.27805in;height:5.31277in"
+alt="Application AI-generated content may be incorrect." /></p>
+</blockquote>
+<ol start="3" type="a">
+<li><p>The <strong>Next</strong> button becomes enabled. <img
+src="./media/media/image21.png" style="width:6.5in;height:2.91597in"
+alt="Graphical user interface, text, application, email AI-generated content may be incorrect." /></p></li>
+</ol>
+<ol start="4" type="1">
+<li><p>Select <strong>Next</strong> to proceed to the Validations and
+Errors step. <img src="./media/media/image22.png"
+style="width:6.5in;height:2.78194in"
+alt="Graphical user interface, text, application, email AI-generated content may be incorrect." /></p></li>
+</ol>
+<blockquote>
+<p>Note: If your upload file includes Validation error (For example:
+Duplicate Analyte in Analysis Result, etc) then you would see those
+errors and information relevant to those errors on Validations and
+Errors page. You wouldn’t be able to upload the sample with errors</p>
+<p><img src="./media/media/image23.png"
+style="width:6.23643in;height:4.09049in"
+alt="Graphical user interface, table AI-generated content may be incorrect." /></p>
+</blockquote>
+<ol start="5" type="1">
+<li><p>Select <strong>Return to Jobs</strong> to exit the
+Wizard.</p></li>
+<li><p>Explore using the Actions column on the Drinking Water Sample
+Jobs page:</p>
+<ol type="a">
+<li><p><strong>Upload File:</strong> Renavigates users to the Upload
+File step of the Wizard to add additional files.</p></li>
+<li><p><strong>Add Sample:</strong> Users can update the Job name (e.g.,
+add “v2”), click <strong>Save</strong>, and confirm the name updates in
+the grid.</p></li>
+<li><p><strong>Delete:</strong> Deletes the Job, the file, and all
+associated data. Do not delete until you have tested the next steps. If
+you do delete, you can repeat steps 1-6 to recreate the Job.</p></li>
+<li><p>Select <strong>View Job Details</strong> to be taken to the
+Sample Job Details page where the list of samples in the file will be
+displayed.</p></li>
+</ol></li>
+<li><p>On the Sample Job Details page, select <strong>View
+Sample</strong> from the Actions column to display a read-only version
+of the Basic Sample information.</p></li>
+</ol>
+<p>Notes on Sample Jobs:</p>
+<ul>
+<li><p>If no structural errors are present in the file upload, the file
+is displayed in a grid with the following columns: Actions, File Name,
+Upload Date, Uploaded By. The <strong>Next</strong> button will become
+available to progress to the Validations and Errors step.</p></li>
+<li><p>Users can upload multiple files in one Job.</p></li>
+<li><p>Users with Preparer, Certifier or Lab/PWS Admin roles can edit
+the Job Name and Delete a Job when the Job is in the Draft
+Status.</p></li>
+</ul>
+<h2 id="esp-jobs-specific-functionality"><mark>ESP Jobs Specific
+Functionality</mark></h2>
+<h3 id="sending-draft-job-to-certifier"><mark>Sending Draft Job To
+Certifier</mark></h3>
+<p>Users can send the Jobs in “Draft” status to a certifier for review
+as follows:</p>
+<ol type="1">
+<li><p>Navigate to ESP &gt; Drinking Water Sample Jobs &gt; Create
+Job.</p></li>
+<li><p>Locate the job on the Drinking Water Sample Jobs grid. In the
+Actions column, select “Send to Certifier” to advance the Job to the
+next step of Job progression.</p></li>
+</ol>
+<blockquote>
+<p><em>Figure: Screenshot of the “Send To Certifier” link in the Actions
+column</em></p>
+<p><img src="./media/media/image24.png"
+style="width:2.03258in;height:2.9515in"
+alt="Screenshot of the “Send To Certifier” link in the Actions column" /></p>
+</blockquote>
+<ol start="3" type="1">
+<li><p>In the modal that pops up titled “Send Data to Certifier”, select
+an Individual from the dropdown.</p></li>
+<li><p>Select Send to Certifier to submit the job for review.</p></li>
+<li><p>The status of the Job changes to “Review”, and “Send to
+Certifier” is greyed out of the Actions column.</p></li>
+</ol>
+<blockquote>
+<p>Figure: Screenshot of the “greyed out Send to Certifier” link in the
+Actions column<br />
+<img src="./media/media/image25.png"
+style="width:2.88209in;height:3.35434in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p>
+</blockquote>
+<h3 id="esp-return-to-preparer"><mark>ESP Return to Preparer</mark></h3>
+<p>An ESP Certifier(user who was selected as certifier in the Send To
+Certifier option) can send jobs in the “Review” status back to the
+preparer for correction.</p>
+<ol type="1">
+<li><p>Navigate to ESP &gt; Drinking Water Sample Jobs &gt; Create
+Job.</p></li>
+<li><p>Locate the job on the Drinking Water Sample Jobs grid. In the
+Actions column, select “Return to Preparer” to advance the Job to the
+next step of Job progression.</p></li>
+</ol>
+<blockquote>
+<p><em>Figure: Screenshot of the “Return to Preparer” link in the
+Actions column</em></p>
+<p><img src="./media/media/image26.png"
+style="width:1.72926in;height:2.09038in" /></p>
+</blockquote>
+<ol start="3" type="1">
+<li><p>In the modal that pops up titled “Return Data to Preparer”,
+select an Individual from the dropdown and provide the reason for
+return.<br />
+Figure: Screenshot of the “Return Data to Preparer” modal<br />
+<img src="./media/media/image27.png"
+style="width:3.19461in;height:2.12511in"
+alt="Graphical user interface, text, application, email AI-generated content may be incorrect." /></p></li>
+<li><p>Select <strong>Return To Preparer</strong> to return the job back
+to preparer.</p></li>
+<li><p>The status of the Job changes to “Draft”, and “Return to
+Preparer” is greyed out of the Actions column.</p></li>
+</ol>
+<blockquote>
+<p>Figure: Screenshot of the “greyed out Return to Preparer” link in the
+Actions column<br />
+<img src="./media/media/image28.png"
+style="width:2.09038in;height:2.04872in" /></p>
+</blockquote>
+<h3 id="esp-job-history"><mark>ESP Job History</mark></h3>
+<p>Users can see the comprehensive history of modifications made to the
+job as follows:</p>
+<ol type="1">
+<li><p>Navigate to ESP &gt; Drinking Water Sample Jobs.</p></li>
+<li><p>In the Actions column of the desired Water Sample Job, select
+<strong>View Job History</strong>.<br />
+Figure : Screenshot of the View Job History link the Actions
+column</p></li>
+</ol>
+<blockquote>
+<p><img src="./media/media/image29.jpeg"
+style="width:1.6875in;height:1.89785in"
+alt="Screenshot of the View Job History link the Actions column" /></p>
+</blockquote>
+<ol start="3" type="1">
+<li><p>User will be able to see all the information associated with the
+job in the Job History page.<br />
+<img src="./media/media/image30.png"
+style="width:5.25721in;height:2.71542in" /></p></li>
+</ol>
+<h2 id="editing-a-sample-job">Editing a Sample Job</h2>
+<p>Users with role groups that grant them <em>Write</em> permissions to
+the <strong>Drinking Water Sample Jobs</strong> can edit a Sample Job
+from the <strong>ESP &gt; Drinking Water Sample Jobs</strong>, clicking
+on the three dots <img src="./media/media/image31.png"
+style="width:0.19445in;height:0.12501in" /> next to the sample job and
+selecting Edit option.</p>
+<p>Note: Only the Job Name can be edited.</p>
+<p><img src="./media/media/image32.png"
+style="width:2.50707in;height:2.77792in" /></p>
+<p>After making the necessary changes, click on the
+<strong>Save</strong> <img src="./media/media/image33.png"
+style="width:0.23612in;height:0.17362in" /> option under the
+<strong>Actions</strong> tab.</p>
+<h2 id="deleting-a-sample-job">Deleting a Sample Job</h2>
+<p>Users with role groups that grant them <em>Write</em> permissions to
+the <strong>Drinking Water Sample Jobs</strong> can edit a Sample Job
+from the <strong>ESP &gt; Drinking Water Sample Jobs</strong>, clicking
+on the three dots <img src="./media/media/image31.png"
+style="width:0.19445in;height:0.12501in" /> next to the sample job and
+selecting <strong>Delete</strong> option.</p>
+<p><img src="./media/media/image34.png"
+style="width:1.62508in;height:2.31262in" /></p>
+<p>Upon selection, an informational message will appear to confirm the
+deletion:</p>
+<p><img src="./media/media/image35.png"
+style="width:2.73625in;height:0.77782in"
+alt="Graphical user interface, text, application AI-generated content may be incorrect." /></p>
+<p>Once a sample job is deleted, a confirmation message will appear and
+the user will remain on the Drinking Water Sample Jobs page.</p>
+<p><img src="./media/media/image36.png"
+style="width:1.44452in;height:0.36113in" /></p>
+<h1 id="excel-template">Excel Template</h1>
+<p>ESP has an Excel Template that can be used to generate a JSON to
+upload to ESP.</p>
+<h2 id="refresh-reference-values-in-the-excel-template">Refresh
+Reference Values in the Excel Template</h2>
+<p>ESP users can refresh the reference values in the provided excel
+template as follows:</p>
+<ol type="1">
+<li><p>In DW-SFTIES, select your User ID in the top right corner, and
+then select My Profile. <img src="./media/media/image37.png"
+style="width:1.63203in;height:1.35424in"
+alt="Graphical user interface, application AI-generated content may be incorrect." /></p></li>
+<li><p>On the User Profile page, select API Tokens.</p>
+<ol type="a">
+<li><p>Under My API Tokens, click on Copy Access Token. The token will
+be copied to your clipboard.<br />
+<img src="./media/media/image38.png"
+style="width:4.25542in;height:1.65625in"
+alt="DW-SFTIES User Profile page indicating the My API Tokens link and the Copy Access Token button" /></p></li>
+</ol></li>
+<li><p>In the Excel Template, select Update Lookup Table.<br />
+<img src="./media/media/image39.png"
+style="width:5.59901in;height:0.90625in"
+alt="The ESP Excel Template with the Update Lookup Table button indicated" /></p></li>
+<li><p>Fill out the pop-up:</p>
+<ol type="a">
+<li><p>Access Token: Paste in your token from DW-SFTIES</p></li>
+<li><p>Environment: Select “uat” from the dropdown</p></li>
+<li><p>Location: Select the schema you are testing in, for example,
+“dwp_ut”<br />
+<img src="./media/media/image40.png"
+style="width:3.06033in;height:2.6875in"
+alt="The Access Token pop-up box with example information populated" /></p></li>
+</ol></li>
+<li><p><strong>Confirm</strong>. Wait for the pop-up to close on its
+own.</p></li>
+<li><p>Scroll to the Attributes section of the template and view the
+Type Code dropdown.</p>
+<ol type="a">
+<li><p>Verify that your schema-specific reference values are now in the
+dropdown.</p>
+<ol type="i">
+<li><p>See Figure 15 for an example (this will vary depending on the
+values in your schema).<br />
+<img src="./media/media/image41.png"
+style="width:3.14901in;height:1.89583in"
+alt="The Attribute Type Code dropdown of the ESP Excel Template after successful Lookup table refresh" /></p></li>
+</ol></li>
+</ol></li>
+</ol>
+<h2 id="generate-json-file-from-esp-excel-template">Generate JSON file
+from ESP Excel Template</h2>
+<p>Users can utilize the Excel Template (provided for ESP Users) to add
+Chemical and Microbial Basic Information, Sample Results, and Associated
+Samples. The template can generate a JSON file that can be uploaded into
+ESP.</p>
+<p>Follow the steps below to generate a JSON file that can be uploaded
+to ESP:</p>
+<ol type="1">
+<li><p>Navigate to GenChem or Micro tab in the Excel tab<img
+src="./media/media/image42.png" style="width:3.81039in;height:1.18314in"
+alt="GenChem tab of the ESP Excel Template" /></p></li>
+<li><p>Add all the information that you want to include in the JSON
+file. E.g., for a General Chemical enter <strong>Reporting Lab ID, Lab
+Sample Number, WS ID, Facility ID, Sampling Point ID, Collection
+Address, Collection Date, Collection Time, Lab Received Date, Lab
+Received Time, Lead Copper Sample Type, Sample Type, Sample Volume,
+Sample Volume UOM, Original Lab Sample Number, Original Reporting Lab
+ID, Original Collection Date, Original Water System Number, Comment,
+Collection Method, Sample Collector Name.</strong></p>
+<ol type="a">
+<li><p>If you want to add Sample Results detail in the JSON file then
+fill out the Sample Result section with the Analyte, Analysis Result,
+Result UOM and other information associated with the Sample
+Result.</p></li>
+<li><p>If you want to add the Field Results detail in the JSON file then
+fill out the Field Result section with the Parameter, Result, Result UOM
+and other information associated with the Field Result.</p></li>
+</ol></li>
+<li><p>Select <strong>Generate JSON File</strong> and save the JSON
+file.</p></li>
+</ol>
+<p>Note: The JSON files generated from the Excel temple can be uploaded
+to create a new job in ESP. The JSON file should be correct
+structurally. However, users must verify that the JSON file is correct
+and complete to create a job in ESP. If data in the template doesn’t
+meet validation rules, the user will see those errors on the Validation
+and Errors page after upload. The upload itself should succeed if the
+JSON structure is valid.</p>
+<h1 id="esp-advanced-sample-search-page"><mark>ESP Advanced Sample
+Search Page</mark></h1>
+<p>Users can search individual samples within jobs, via <strong>ESP &gt;
+Search.</strong> Users can enter the search criteria to generate a
+sortable, filterable grid. Each search result contains a “Go to Job”
+link that opens the Sample Job Details page in a new tab for the
+selected Job ID.</p>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li><p>Users can only search on their current organization. Water
+Systems can only see samples for their Water System.</p></li>
+<li><p>Lab can only see results that their lab submitted.</p></li>
+<li><p>Primacy Agency Admins and Compliance Officers can see all
+results.</p></li>
+</ul>
+<p>Search Criteria includes:</p>
+<ul>
+<li><p>Job ID</p></li>
+<li><p>Job Status</p></li>
+<li><p>Water System No</p></li>
+<li><p>Water System Name</p></li>
+<li><p>Facility</p></li>
+<li><p>Lab Sample No</p></li>
+<li><p>Laboratory</p></li>
+<li><p>Collection Date From</p></li>
+<li><p>Collection Date To</p></li>
+<li><p>Sample Type</p></li>
+<li><p>Sample Category</p></li>
+<li><p>Analyte Code</p></li>
+<li><p>Method Code</p></li>
+<li><p>Analysis Start Date From</p></li>
+<li><p>Analysis Start Date To</p></li>
+<li><p>Reporting Laboratory<br />
+Figure: Screenshot of the “Advanced Sample Search” page in ESP</p></li>
+</ul>
+<blockquote>
+<p><img src="./media/media/image43.png"
+style="width:6.5in;height:3.26944in" /></p>
+</blockquote>
