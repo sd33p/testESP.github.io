@@ -1,25 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Target all headings you want to be collapsible (h1, h2, h3 etc.)
-  const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+  // Process from deepest heading level to shallowest.
+  // This way, when we wrap an h1, the h2/h3 sections beneath it
+  // have already been converted to <details> and get nested inside.
+  for (let level = 6; level >= 1; level--) {
+    const headings = document.querySelectorAll("h" + level);
 
-  headings.forEach(function (heading) {
-    const details = document.createElement("details");
-    const summary = document.createElement("summary");
+    headings.forEach(function (heading) {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
 
-    // Copy heading content into <summary>
-    summary.innerHTML = heading.innerHTML;
-    details.appendChild(summary);
-    details.open = true; // sections expanded by default
+      summary.innerHTML = heading.innerHTML;
+      details.appendChild(summary);
+      details.open = true;
 
-    // Move all sibling elements until the next heading into <details>
-    let sibling = heading.nextElementSibling;
-    while (sibling && !sibling.matches("h1, h2, h3, h4, h5, h6, h7")) {
-      const next = sibling.nextElementSibling;
-      details.appendChild(sibling);
-      sibling = next;
-    }
+      // Preserve id and class for anchor links and styling
+      if (heading.id) details.id = heading.id;
+      if (heading.className) details.className = heading.className;
+      details.dataset.headingLevel = level;
 
-    // Replace the original heading with the new <details> block
-    heading.replaceWith(details);
-  });
+      // Collect all siblings until the next heading of same or higher level.
+      // Lower-level headings (h2 inside h1, h3 inside h2, etc.) have already
+      // been converted to <details> elements so they get captured here.
+      let sibling = heading.nextElementSibling;
+      while (sibling) {
+        const match = sibling.tagName.match(/^H([1-6])$/i);
+        if (match && parseInt(match[1]) <= level) break;
+        const next = sibling.nextElementSibling;
+        details.appendChild(sibling);
+        sibling = next;
+      }
+
+      heading.replaceWith(details);
+    });
+  }
 });

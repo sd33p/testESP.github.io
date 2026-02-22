@@ -28,13 +28,16 @@ details {
 }
 
 summary {
-  font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
   color: #2c3e50;
   padding: 0.5rem 0;
   list-style: none; /* removes default triangle on some browsers */
 }
+
+details[data-heading-level="1"] > summary { font-size: 1.6rem; }
+details[data-heading-level="2"] > summary { font-size: 1.3rem; }
+details[data-heading-level="3"] > summary { font-size: 1.1rem; }
 
 summary::-webkit-details-marker {
   display: none; /* removes triangle in Chrome/Safari */
