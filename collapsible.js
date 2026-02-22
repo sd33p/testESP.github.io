@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Target all headings you want to be collapsible (h1, h2, h3 etc.)
-  const headings = document.querySelectorAll("h2, h3");
+  const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
 
   headings.forEach(function (heading) {
     const details = document.createElement("details");
